@@ -1,0 +1,15 @@
+<template name="posts">
+    {{#each posts}}
+    <div class="media">
+        <div class="media-left">
+            <a href="#">
+                <img class="media-object" src="{{author.profile_image}}" alt="{{author.name}}">
+            </a>
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">{{author.name}}</h4>
+            {{message}}
+        </div>
+    </div>
+    {{/each}}
+</template>
