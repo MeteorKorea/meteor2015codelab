@@ -1,3 +1,3 @@
-Meteor.publish('getPage', function() {
-    return Posts.find();
+Meteor.publish('getPage', function(pageId) {
+    return Posts.find({pageId: pageId});
 });
