@@ -1,6 +1,6 @@
 Template.main.helpers({
   'page': function() {
-      return 'Nobody';
+      return Session.get('pageId');
   }
 });
 
