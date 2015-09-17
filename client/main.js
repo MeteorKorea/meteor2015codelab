@@ -4,6 +4,10 @@ Template.main.helpers({
   }
 });
 
+Template.main.onCreated(function() {
+    this.subscribe('getPage');
+});
+
 Template.main.events({
     "submit": function(event, template) {
         Meteor.call("addPosts", {
