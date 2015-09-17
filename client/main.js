@@ -1,3 +1,9 @@
+Template.main.helpers({
+  'page': function() {
+      return 'Nobody';
+  }
+});
+
 Template.main.events({
     "submit": function(event, template) {
         Meteor.call("addPosts", {
