@@ -5,7 +5,8 @@ Meteor.methods({
                 name: obj.name,
                 profile_image: obj.profile_image
             },
-            message: obj.message
+            message: obj.message,
+            createdAt: new Date()
         });
     }
 });
