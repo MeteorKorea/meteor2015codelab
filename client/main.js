@@ -8,7 +8,6 @@ Template.main.events({
             if (err) {
                 throw(error);
             } else {
-                console.log(result);
                 template.find('#post').value = "";
             }
         });
