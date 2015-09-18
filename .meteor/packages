@@ -7,3 +7,5 @@
 meteor-platform
 twbs:bootstrap
 kadira:flow-router
+accounts-password
+ian:accounts-ui-bootstrap-3
