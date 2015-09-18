@@ -7,8 +7,12 @@
             </a>
         </div>
         <div class="media-body">
-            <h4 class="media-heading">{{author.name}}</h4>
-            {{message}}
+            <h5 class="media-heading">{{author.name}}
+                - <i>{{timeFrom createdAt}}</i>
+            </h5>
+            <div>
+                {{message}}
+            </div>
         </div>
     </div>
     {{/each}}
