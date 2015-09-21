@@ -11,5 +11,23 @@ Meteor.methods({
             message: obj.message,
             createdAt: new Date()
         });
+    },
+    "follow": function(pageId) {
+        check(this.userId, String);
+        var obj={};
+        obj["profile.followings."+pageId]={
+            createdAt: new Date()
+        };
+        Meteor.users.update(this.userId, {
+            $set: obj
+        });
+    },
+    "unfollow": function(pageId) {
+        check(this.userId, String);
+        var obj={};
+        obj["profile.followings."+pageId]="";
+        Meteor.users.update(this.userId, {
+            $unset: obj
+        });
     }
 });

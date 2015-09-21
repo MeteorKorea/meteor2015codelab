@@ -1,6 +1,10 @@
 Template.main.helpers({
   'page': function() {
       return Session.get('pageId') || 'popular';
+  },
+  'isFollowing': function() {
+      var followings = Meteor.user().profile.followings;
+      return followings && followings[Session.get('pageId')];
   }
 });
 
@@ -17,5 +21,11 @@ Template.main.events({
             }
         });
         event.preventDefault();
+    },
+    "click #follow": function() {
+        Meteor.call('follow', Session.get('pageId'));
+    },
+    "click #unfollow": function() {
+        Meteor.call('unfollow', Session.get('pageId'));
     }
 });

@@ -1,6 +1,16 @@
 <template name="main">
     <div class="container">
-        <h2>{{page}}'s Page</h2>
+        <div>
+            <h2>{{page}}'s Page
+                {{#if currentUser}}
+                    {{#if isFollowing}}
+                        <button id="unfollow" class="btn btn-inverse">unfollow</button>
+                        {{else}}
+                        <button id="follow" class="btn btn-primary">follow</button>
+                    {{/if}}
+                {{/if}}
+            </h2>
+        </div>
         {{#if currentUser}}
         <form>
             <div class="input-group">
