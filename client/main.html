@@ -1,5 +1,6 @@
 <template name="main">
     <div class="container">
+        {{#if page}}
         <div>
             <h2>{{page}}'s Page
                 {{#if currentUser}}
@@ -24,6 +25,9 @@
             </div>
         </form>
         {{/if}}
-        {{> posts}}
+        {{> posts pageId=page}}
+        {{else}}
+            {{> dashboard}}
+        {{/if}}
     </div>
 </template>

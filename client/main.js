@@ -1,6 +1,6 @@
 Template.main.helpers({
   'page': function() {
-      return Session.get('pageId') || 'popular';
+      return Session.get('pageId');
   },
   'isFollowing': function() {
       var followings = Meteor.user().profile.followings;
