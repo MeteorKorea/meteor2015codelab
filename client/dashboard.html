@@ -1,0 +1,16 @@
+<template name="dashboard">
+    <div class="well">
+        <h2>Welcome to Sogon</h2>
+        <p>What do you want to talk about?</p>
+        {{#unless currentUser}}
+        <a href="/page/{{luckyPage}}" class="btn btn-primary">Feeling lucky</a>
+        {{/unless}}
+    </div>
+    {{#if currentUser}}
+        <h2>Recent Posts</h2>
+        {{#each pages}}
+            <h3><a href="/page/{{pageId}}">{{pageId}}</a></h3>
+        {{> posts pageId=pageId}}
+        {{/each}}
+    {{/if}}
+</template>
