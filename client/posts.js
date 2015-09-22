@@ -8,7 +8,9 @@ Template.posts.onCreated(function() {
 
 Template.posts.helpers({
     "posts": function () {
-        return Posts.find({}, {
+        return Posts.find({
+            pageId: Template.instance().data.pageId
+        }, {
             sort: {
                 createdAt: -1
             }
