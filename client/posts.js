@@ -1,8 +1,6 @@
 Template.posts.onCreated(function() {
-    var instance= this;
-    this.autorun(function() {
-        instance.subscribe('getPage', Session.get('pageId'));
-    });
+    var pageId = this.data.pageId;
+    pageId && this.subscribe('getPage', pageId);
     this.interval = Meteor.setInterval(function() {
         Session.set('live', Random.id());
     }, 1000);
