@@ -2,9 +2,7 @@
     <div class="well">
         <h2>Welcome to Sogon</h2>
         <p>What do you want to talk about?</p>
-        {{#unless currentUser}}
         <a href="/page/{{luckyPage}}" class="btn btn-primary">Feeling lucky</a>
-        {{/unless}}
     </div>
     {{#if currentUser}}
         <h2>Recent Posts</h2>
